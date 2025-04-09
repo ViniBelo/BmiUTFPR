@@ -19,10 +19,10 @@ class BmiUnitTest {
         val weight = 70.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.WAITING_DATA, result)
+        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.result)
     }
 
     @Test
@@ -32,10 +32,10 @@ class BmiUnitTest {
         val weight = 0.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.WAITING_DATA, result)
+        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.result)
     }
 
     @Test
@@ -45,10 +45,10 @@ class BmiUnitTest {
         val weight = 0.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.WAITING_DATA, result)
+        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.result)
     }
 
     @Test
@@ -58,10 +58,10 @@ class BmiUnitTest {
         val weight = 50.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(result, BmiClassification.THINNESS)
+        assertEquals(BmiClassification.THINNESS, bmiViewModel.result)
     }
 
     @Test
@@ -71,10 +71,10 @@ class BmiUnitTest {
         val weight = 65.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(result, BmiClassification.NORMAL)
+        assertEquals(BmiClassification.NORMAL, bmiViewModel.result)
     }
 
     @Test
@@ -84,10 +84,10 @@ class BmiUnitTest {
         val weight = 80.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(result, BmiClassification.OVERWEIGHT)
+        assertEquals(BmiClassification.OVERWEIGHT, bmiViewModel.result)
     }
 
     @Test
@@ -97,10 +97,10 @@ class BmiUnitTest {
         val weight = 95.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(result, BmiClassification.OBESE)
+        assertEquals(BmiClassification.OBESE, bmiViewModel.result)
     }
 
     @Test
@@ -110,10 +110,10 @@ class BmiUnitTest {
         val weight = 110.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(result, BmiClassification.VERY_OBESE)
+        assertEquals(BmiClassification.VERY_OBESE, bmiViewModel.result)
     }
 
     @Test
@@ -123,9 +123,9 @@ class BmiUnitTest {
         val weight = 120.0
 
         // When
-        val result = bmiViewModel.calculateBmi(height, weight)
+        bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(result, BmiClassification.MORBID_OBESE)
+        assertEquals(BmiClassification.MORBID_OBESE, bmiViewModel.result)
     }
 }
