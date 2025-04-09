@@ -1,6 +1,7 @@
 package br.com.vinibelo.bmi_utfpr
 
 import br.com.vinibelo.bmi_utfpr.model.BmiClassification
+import br.com.vinibelo.bmi_utfpr.ui.bmi.BmiViewModel
 import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*
