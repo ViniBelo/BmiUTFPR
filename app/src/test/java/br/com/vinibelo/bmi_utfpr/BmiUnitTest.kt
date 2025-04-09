@@ -5,9 +5,11 @@ import org.junit.Test
 import org.junit.Assert.*
 
 class BmiUnitTest {
+    private lateinit var bmiViewModel: BmiViewModel
+
     @Before
     fun before() {
-        val bmiViewModel = BmiViewModel()
+        bmiViewModel = BmiViewModel()
     }
 
     @Test
