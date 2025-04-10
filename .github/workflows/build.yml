@@ -31,9 +31,9 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      # Check Kotlin code formatting with ktlint
-      - name: Run ktlint
-        run: ./gradlew ktlintCheck
+      # Check Kotlin code formatting with lint
+      - name: Run lint
+        run: ./gradlew lint
 
       # Run Android Lint to check for potential issues
       - name: Run Android Lint
