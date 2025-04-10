@@ -2,8 +2,7 @@ package br.com.vinibelo.bmi_utfpr
 
 import androidx.compose.ui.test.assertTextEquals
 import br.com.vinibelo.bmi_utfpr.model.BmiClassification
-import br.com.vinibelo.bmi_utfpr.ui.bmi.BmiViewModel
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
@@ -13,7 +12,7 @@ import org.junit.Test
 class BmiScreenTest {
 
     @get:Rule
-    val composeTestRule = createAndroidComposeRule<MainActivity>()
+    val composeTestRule = createComposeRule()
 
     private val testCases = listOf(
         TestCase(0.0, 0.0, BmiClassification.WAITING_DATA),
@@ -27,11 +26,11 @@ class BmiScreenTest {
 
     @Test
     fun testBmiClassificationForDifferentInputs() {
-        testCases.forEach { testCase ->
-            composeTestRule.setContent {
-                BmiScreen(viewModel = BmiViewModel())
-            }
+        composeTestRule.setContent {
+            BmiScreen()
+        }
 
+        testCases.forEach { testCase ->
             composeTestRule.onNodeWithTag("heightField")
                 .performTextInput(testCase.height.toString())
 
@@ -42,7 +41,7 @@ class BmiScreenTest {
                 .performClick()
 
             composeTestRule.onNodeWithTag("resultText")
-                .assertTextEquals(testCase.expected.name)
+                .assertTextEquals(testCase.expected.label)
         }
     }
 
