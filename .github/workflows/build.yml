@@ -1,0 +1,44 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up JDK 17 (required for modern Android projects)
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Make the Gradle wrapper executable
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      # Build the project and download dependencies
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      # Check Kotlin code formatting with ktlint
+      - name: Run ktlint
+        run: ./gradlew ktlintCheck
+
+      # Run Android Lint to check for potential issues
+      - name: Run Android Lint
+        run: ./gradlew lintDebug
+
+      # Run unit tests
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest
