@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import br.com.vinibelo.bmi_utfpr.ui.bmi.BmiScreen
 import br.com.vinibelo.bmi_utfpr.ui.theme.Bmi_utfprTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +21,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             Bmi_utfprTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    BmiScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Bmi_utfprTheme {
-        Greeting("Android")
     }
 }

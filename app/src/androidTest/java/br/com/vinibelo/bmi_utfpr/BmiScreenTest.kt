@@ -6,6 +6,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
+import br.com.vinibelo.bmi_utfpr.ui.bmi.BmiScreen
 import org.junit.Rule
 import org.junit.Test
 
