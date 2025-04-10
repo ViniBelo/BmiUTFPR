@@ -24,7 +24,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.result)
+        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -37,7 +37,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.result)
+        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -50,7 +50,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.result)
+        assertEquals(BmiClassification.WAITING_DATA, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -63,7 +63,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.THINNESS, bmiViewModel.result)
+        assertEquals(BmiClassification.THINNESS, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -76,7 +76,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.NORMAL, bmiViewModel.result)
+        assertEquals(BmiClassification.NORMAL, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -89,7 +89,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.OVERWEIGHT, bmiViewModel.result)
+        assertEquals(BmiClassification.OVERWEIGHT, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -102,7 +102,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.OBESE, bmiViewModel.result)
+        assertEquals(BmiClassification.OBESE, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -115,7 +115,7 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.VERY_OBESE, bmiViewModel.result)
+        assertEquals(BmiClassification.VERY_OBESE, bmiViewModel.uiState.result)
     }
 
     @Test
@@ -128,6 +128,6 @@ class BmiUnitTest {
         bmiViewModel.calculateBmi(height, weight)
 
         // Then
-        assertEquals(BmiClassification.MORBID_OBESE, bmiViewModel.result)
+        assertEquals(BmiClassification.MORBID_OBESE, bmiViewModel.uiState.result)
     }
 }
