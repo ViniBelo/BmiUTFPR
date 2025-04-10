@@ -35,10 +35,6 @@ jobs:
       - name: Run lint
         run: ./gradlew lint
 
-      # Run Android Lint to check for potential issues
-      - name: Run Android Lint
-        run: ./gradlew lintDebug
-
       # Run unit tests
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
