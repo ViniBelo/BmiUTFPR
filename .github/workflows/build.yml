@@ -27,14 +27,6 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      # Check if project compile both in debug and release
-      - name: Assemble Debug and Release
-        run: ./gradlew assembleDebug assembleRelease
-
-      # Build the project and download dependencies
-      - name: Build with Gradle
-        run: ./gradlew build
-
       # Check Kotlin code formatting with lint
       - name: Run lint
         run: ./gradlew lint
@@ -49,3 +41,11 @@ jobs:
       # Run unit tests
       - name: Run unit tests
         run: ./gradlew testReleaseUnitTest
+
+      # Check if project compile both in debug and release
+      - name: Assemble Debug and Release
+        run: ./gradlew assembleDebug assembleRelease
+
+      # Build the project and download dependencies
+      - name: Build with Gradle
+        run: ./gradlew build
