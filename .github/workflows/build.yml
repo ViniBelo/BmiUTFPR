@@ -27,10 +27,6 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      # Check if plugins are updated
-      - name: Check for dependency updates
-        run: ./gradlew dependencyUpdates
-
       # Check if project compile both in debug and release
       - name: Assemble Debug and Release
         run: ./gradlew assembleDebug assembleRelease
